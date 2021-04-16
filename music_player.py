@@ -1,34 +1,55 @@
 from playsound import playsound
 
-class music_Player:
+class InstrumentPlayer:
 
-       def __init__(self, notes , song, instrument):
+       def __init__(self, notes = None, song = None, instrument = None):
              
               self.instrument = instrument
               self.folder = str(self.instrument) + '_notes'
               self.notes = notes
               self.song = song
-              
-       def get_path(self):
-
               self.note_paths = {}
-
-              for note in self.notes:
               
-                     path = self.folder + '/' + str(note) + '.wav'
+       def get_path(self, notes = None, Folder = None):
 
-                     self.note_paths[note] = path
+              if notes != self.notes and Folder != self.folder and notes != None and Folder != None:
+       
+                     for note in notes:
+                            
+                            path = folder + '/' + str(note) + '.wav'
+              
+                            self.note_paths[note] = path
+       
+              else:
                      
+
+                     for note in self.notes:
+                     
+                            path = self.folder + '/' + str(note) + '.wav'
+       
+                            self.note_paths[note] = path
+                            
+                     return self.note_paths
+
               return self.note_paths
        
-       
-       def play_song(self):
+       def play_song(self, song = None, note_paths = None):
               
-                     for note in self.song:
+                     if song != self.song and note_paths != self.note_paths and song != None and note_paths != None:
                             
-                            self.note_to_play = self.note_paths[note]
-                            print(note + ' : ' + self.note_to_play)
-                            playsound(self.note_to_play)
+                            for note in song:
+                                   
+                                   note_to_play = note_paths[note]
+                                   print(note + ' : ' + note_to_play)
+                                   playsound(note_to_play)
+                            
+                     else:
+                            
+                            for note in self.song:
+                                   
+                                   self.note_to_play = self.note_paths[note]
+                                   print(note + ' : ' + self.note_to_play)
+                                   playsound(self.note_to_play)
 
 
 piano_notes = ['A#', 'A', 'B', 'Bb', 'C#', 'C', 'D#', 'D', 'E', 'Eb', 'F#', 'F', 'G#', 'G']
