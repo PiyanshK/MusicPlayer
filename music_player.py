@@ -56,7 +56,7 @@ piano_notes = ['A#', 'A', 'B', 'Bb', 'C#', 'C', 'D#', 'D', 'E', 'Eb', 'F#', 'F',
 
 hot_cross_buns = ['E', 'D', 'C', 'E', 'D', 'C', 'C', 'C', 'C', 'C', 'D', 'D', 'D', 'D', 'E', 'D', 'C']
 
-piano_player = music_Player(piano_notes, hot_cross_buns, 'piano')
+piano_player = InstrumentPlayer(piano_notes, hot_cross_buns, 'piano')
 
 piano_player.get_path()
 
