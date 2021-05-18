@@ -33,13 +33,13 @@ class InstrumentPlayer:
 
               return self.note_paths
        
-       def play_song(self, song = None, note_paths = None):
+       def play_song(self, song = None):
               
-                     if song != self.song and note_paths != self.note_paths and song != None and note_paths != None:
+                     if song != self.song and song != None :
                             
                             for note in song:
                                    
-                                   note_to_play = note_paths[note]
+                                   note_to_play = self.note_paths[note]
                                    print(note + ' : ' + note_to_play)
                                    playsound(note_to_play)
                             
